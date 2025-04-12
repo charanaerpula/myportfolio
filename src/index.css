@@ -48,6 +48,7 @@
 
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
   }
 
   .section-heading {
@@ -85,9 +86,9 @@ html {
   overflow: hidden;
   border-right: .15em solid rgba(0, 0, 0, 0.75);
   white-space: nowrap;
-  margin: 0 auto;
+  margin: 0;
   animation: 
-    typing 3.5s steps(40, end),
+    typing 3s steps(40, end),
     blink-caret .75s step-end infinite;
 }
 
@@ -95,29 +96,48 @@ html {
   overflow: hidden;
   border-right: .15em solid rgba(0, 0, 0, 0.75);
   white-space: nowrap;
-  margin: 0 auto;
+  margin: 0;
   animation: 
-    typing 5s steps(40, end) 1s forwards,
+    typing 4s steps(40, end) 1s forwards,
     blink-caret .75s step-end infinite;
   width: 0;
 }
 
 /* Fade in animation */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .fade-in {
-  animation: fadeIn 1.5s ease-in;
+  animation: fadeIn 1s ease-out;
 }
 
 .fade-in-slow {
   opacity: 0;
-  animation: fadeIn 1.5s ease-in forwards 2s;
+  animation: fadeIn 1s ease-out forwards 1.5s;
 }
 
 .fade-in-slower {
   opacity: 0;
-  animation: fadeIn 1.5s ease-in forwards 3s;
+  animation: fadeIn 1s ease-out forwards 2.5s;
+}
+
+/* Hover animations */
+.hover-lift {
+  transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+}
+
+/* Card animations */
+.card-animation {
+  transition: all 0.3s ease;
+}
+
+.card-animation:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }

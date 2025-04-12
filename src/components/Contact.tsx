@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, MessageSquare, Send } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const Contact = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -14,33 +15,40 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-24 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="section-heading font-typewriter">Get In Touch</h2>
+        <h2 className="section-heading font-typewriter mb-12">Get In Touch</h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-8">
-          <div>
-            <p className="text-foreground mb-6">
-              I'm currently open to new opportunities and collaborations. 
-              Whether you have a question or just want to say hi, I'll try my best to get back to you!
-            </p>
-            
-            <div className="flex items-center gap-3 mb-4">
-              <Mail className="text-highlight" size={20} />
-              <a href="mailto:contact@charantejayadav.com" className="text-foreground hover:text-highlight transition-colors">
-                contact@charantejayadav.com
-              </a>
-            </div>
-            
-            <div className="flex items-center gap-3">
-              <MessageSquare className="text-highlight" size={20} />
-              <span className="text-foreground">
-                Response time: 24-48 hours
-              </span>
-            </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-8">
+          <div className="space-y-6">
+            <Card className="bg-white border border-border/30">
+              <CardHeader>
+                <CardTitle className="text-xl text-foreground font-typewriter">Let's Connect</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <p className="text-foreground/80">
+                  I'm currently open to new opportunities and collaborations. 
+                  Whether you have a question or just want to say hi, I'll try my best to get back to you!
+                </p>
+                
+                <div className="flex items-center gap-3">
+                  <Mail className="text-highlight" size={18} />
+                  <a href="mailto:contact@charantejayadav.com" className="text-foreground hover:text-highlight transition-colors">
+                    contact@charantejayadav.com
+                  </a>
+                </div>
+                
+                <div className="flex items-center gap-3">
+                  <MessageSquare className="text-highlight" size={18} />
+                  <span className="text-foreground/80">
+                    Response time: 24-48 hours
+                  </span>
+                </div>
+              </CardContent>
+            </Card>
           </div>
           
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-5 bg-white p-6 border border-border/30 rounded-lg">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <label htmlFor="name" className="text-sm text-foreground font-typewriter">Name</label>
@@ -84,7 +92,7 @@ const Contact = () => {
               />
             </div>
             
-            <Button type="submit" className="bg-highlight text-white hover:bg-highlight/90 w-full sm:w-auto font-typewriter">
+            <Button type="submit" className="bg-highlight text-white hover:bg-highlight/90 font-typewriter">
               Send Message <Send size={16} className="ml-2" />
             </Button>
           </form>

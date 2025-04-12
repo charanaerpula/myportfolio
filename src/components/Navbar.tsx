@@ -35,12 +35,12 @@ const Navbar = () => {
     <header 
       className={cn(
         'fixed top-0 w-full z-50 transition-all duration-300',
-        scrolled ? 'bg-white/95 backdrop-blur-sm shadow-md py-2' : 'py-4 bg-white'
+        scrolled ? 'bg-white/95 backdrop-blur-sm border-b border-border/30 py-3' : 'py-5 bg-white'
       )}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <a href="#home" className="text-xl font-bold text-highlight font-typewriter">
-          Charan<span className="text-foreground">Tejayadav</span>
+        <a href="#home" className="text-xl font-bold text-foreground font-typewriter">
+          Charan<span className="text-highlight">Tejayadav</span>
         </a>
 
         {/* Desktop menu */}
@@ -49,13 +49,13 @@ const Navbar = () => {
             <a
               key={item.name}
               href={item.href}
-              className="text-foreground hover:text-highlight transition-colors duration-300 font-typewriter"
+              className="text-foreground/80 hover:text-highlight transition-colors duration-300 font-typewriter text-sm"
             >
               {item.name}
             </a>
           ))}
           <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" className="border-highlight text-highlight hover:bg-highlight/10 font-typewriter">
+            <Button variant="outline" className="border-highlight text-highlight hover:bg-highlight/10 font-typewriter text-sm">
               Resume
             </Button>
           </a>
@@ -65,6 +65,7 @@ const Navbar = () => {
         <button 
           className="md:hidden text-foreground"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle menu"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -72,13 +73,13 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="absolute top-16 left-0 w-full bg-white/95 backdrop-blur-sm shadow-md py-4 md:hidden animate-fadeIn">
+        <div className="absolute top-16 left-0 w-full bg-white border-b border-border/30 py-4 md:hidden animate-fadeIn">
           <div className="container mx-auto px-4 flex flex-col space-y-4">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-foreground hover:text-highlight transition-colors duration-300 py-2 font-typewriter"
+                className="text-foreground/80 hover:text-highlight transition-colors duration-300 py-2 font-typewriter"
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}

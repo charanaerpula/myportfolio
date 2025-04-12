@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section 
       id="home" 
-      className="min-h-screen flex items-center pt-20 pb-16 bg-white"
+      className="min-h-screen flex items-center py-24 bg-white border-b border-border/30"
     >
       <div className="container mx-auto px-4">
         <div className="max-w-3xl">
@@ -18,7 +18,7 @@ const Hero = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-muted-foreground mb-6 font-typewriter typewriter-slow">
             I build exceptional web experiences.
           </h2>
-          <p className="text-lg text-foreground mb-8 max-w-2xl fade-in-slow">
+          <p className="text-lg text-foreground/80 mb-8 max-w-2xl fade-in-slow leading-relaxed">
             I'm a web developer specialized in creating stunning digital experiences. 
             Currently, I'm focused on building accessible, responsive web applications
             and integrating cutting-edge AI technologies.
@@ -26,7 +26,7 @@ const Hero = () => {
           
           <div className="flex flex-wrap gap-4 fade-in-slower">
             <a href="#projects">
-              <Button className="bg-transparent border border-highlight text-highlight hover:bg-highlight/10 font-typewriter">
+              <Button className="bg-transparent border-2 border-highlight text-highlight hover:bg-highlight/5 font-typewriter">
                 View My Work <ArrowRight size={16} className="ml-2" />
               </Button>
             </a>

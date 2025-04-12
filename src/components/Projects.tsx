@@ -2,7 +2,8 @@
 import React from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 interface Project {
   title: string;
@@ -51,42 +52,52 @@ const Projects = () => {
   const featuredProjects = projects.filter(project => project.featured);
   
   return (
-    <section id="projects" className="py-20 bg-white">
+    <section id="projects" className="py-24 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="section-heading font-typewriter">Projects</h2>
+        <div className="flex items-center justify-between mb-12">
+          <h2 className="section-heading font-typewriter">Featured Projects</h2>
+          <Button variant="link" className="text-highlight font-typewriter flex items-center">
+            View All Projects <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
+        </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
           {featuredProjects.map((project, index) => (
             <Card 
               key={index} 
-              className="bg-card border border-border/50 hover:border-highlight/50 transition-all duration-300 hover:shadow-md"
+              className="bg-white border border-border/30 hover:border-highlight/50 transition-all duration-300 hover:shadow-lg"
               style={{
                 animationDelay: `${index * 0.2}s`,
                 animationFillMode: 'both'
               }}
             >
-              <CardHeader>
+              <CardHeader className="pb-2">
                 <CardTitle className="text-xl text-foreground font-typewriter">{project.title}</CardTitle>
-                <CardDescription className="text-foreground/70">{project.description}</CardDescription>
+                <CardDescription className="text-foreground/80 mt-2">{project.description}</CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="pt-2">
                 <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech, techIndex) => (
-                    <Badge key={techIndex} variant="outline" className="bg-white border-highlight text-foreground">
+                  {project.technologies.slice(0, 3).map((tech, techIndex) => (
+                    <Badge key={techIndex} variant="outline" className="bg-white border-highlight/50 text-foreground/80">
                       {tech}
                     </Badge>
                   ))}
+                  {project.technologies.length > 3 && (
+                    <Badge variant="outline" className="bg-white border-highlight/50 text-foreground/80">
+                      +{project.technologies.length - 3}
+                    </Badge>
+                  )}
                 </div>
               </CardContent>
-              <CardFooter className="flex justify-end space-x-3">
+              <CardFooter className="flex justify-end space-x-3 pt-2">
                 {project.githubUrl && (
                   <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-highlight transition-colors">
-                    <Github size={20} />
+                    <Github size={18} />
                   </a>
                 )}
                 {project.liveUrl && (
                   <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-highlight transition-colors">
-                    <ExternalLink size={20} />
+                    <ExternalLink size={18} />
                   </a>
                 )}
               </CardFooter>
