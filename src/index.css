@@ -1,6 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,44 +9,35 @@
 
 @layer base {
   :root {
-    --background: 230 30% 10%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
 
-    --card: 230 30% 15%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 98%;
+    --card-foreground: 240 10% 3.9%;
 
-    --popover: 230 30% 15%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
 
-    --primary: 242 83% 60%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 110 25% 35%;
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 240 5% 25%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 240 5% 20%;
-    --muted-foreground: 215 20% 70%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 240 4% 30%;
 
-    --accent: 220 70% 60%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 110 25% 35%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 240 5% 25%;
-    --input: 240 5% 25%;
-    --ring: 240 5% 65%;
+    --border: 240 5% 84%;
+    --input: 240 5% 84%;
+    --ring: 110 25% 35%;
 
     --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -59,12 +51,12 @@
   }
 
   .section-heading {
-    @apply text-2xl sm:text-3xl font-bold text-foreground relative inline-block mb-8;
+    @apply text-2xl sm:text-3xl font-bold text-foreground relative inline-block mb-8 font-typewriter;
   }
   
   .section-heading::after {
     content: '';
-    @apply absolute -bottom-2 left-0 w-1/2 h-1 bg-highlight;
+    @apply absolute -bottom-2 left-0 w-1/2 h-1 bg-accent;
   }
 }
 
@@ -76,4 +68,56 @@ html {
 /* Custom styling for code blocks */
 .code-text {
   font-family: 'JetBrains Mono', monospace;
+}
+
+/* Typewriter effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: rgba(0, 0, 0, 0.75) }
+}
+
+.typewriter {
+  overflow: hidden;
+  border-right: .15em solid rgba(0, 0, 0, 0.75);
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+.typewriter-slow {
+  overflow: hidden;
+  border-right: .15em solid rgba(0, 0, 0, 0.75);
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: 
+    typing 5s steps(40, end) 1s forwards,
+    blink-caret .75s step-end infinite;
+  width: 0;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 1.5s ease-in;
+}
+
+.fade-in-slow {
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in forwards 2s;
+}
+
+.fade-in-slower {
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in forwards 3s;
 }

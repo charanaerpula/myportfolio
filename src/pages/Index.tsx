@@ -9,7 +9,7 @@ import Footer from '@/components/Footer';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-navy-950 to-navy-900">
+    <div className="min-h-screen bg-background">
       <Navbar />
       <main>
         <Hero />

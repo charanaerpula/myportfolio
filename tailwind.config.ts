@@ -53,16 +53,6 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				},
 				navy: {
 					50: '#eef1ff',
 					100: '#dce4ff',
@@ -76,7 +66,20 @@ export default {
 					900: '#2d2682',
 					950: '#1c1650',
 				},
-				highlight: "#64ffda",
+				olive: {
+					50: '#f8f9f1',
+					100: '#eef0e1',
+					200: '#dde2c3',
+					300: '#c4ce96',
+					400: '#aab86c',
+					500: '#8c9c4a',
+					600: '#6f7c39',
+					700: '#56612f',
+					800: '#464e29',
+					900: '#3b4226',
+					950: '#1f2312',
+				},
+				highlight: "#556B2F", // olive green
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -118,6 +121,7 @@ export default {
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],
 				mono: ['JetBrains Mono', 'monospace'],
+				typewriter: ['Special Elite', 'cursive'],
 			}
 		}
 	},

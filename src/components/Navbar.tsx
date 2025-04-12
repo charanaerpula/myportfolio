@@ -35,11 +35,11 @@ const Navbar = () => {
     <header 
       className={cn(
         'fixed top-0 w-full z-50 transition-all duration-300',
-        scrolled ? 'bg-background/95 backdrop-blur-sm shadow-md py-2' : 'py-4'
+        scrolled ? 'bg-white/95 backdrop-blur-sm shadow-md py-2' : 'py-4 bg-white'
       )}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <a href="#home" className="text-xl font-bold text-highlight font-mono">
+        <a href="#home" className="text-xl font-bold text-highlight font-typewriter">
           Charan<span className="text-foreground">Tejayadav</span>
         </a>
 
@@ -49,13 +49,13 @@ const Navbar = () => {
             <a
               key={item.name}
               href={item.href}
-              className="text-muted-foreground hover:text-highlight transition-colors duration-300"
+              className="text-foreground hover:text-highlight transition-colors duration-300 font-typewriter"
             >
               {item.name}
             </a>
           ))}
           <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" className="border-highlight text-highlight hover:bg-highlight/10">
+            <Button variant="outline" className="border-highlight text-highlight hover:bg-highlight/10 font-typewriter">
               Resume
             </Button>
           </a>
@@ -72,13 +72,13 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="absolute top-16 left-0 w-full bg-background/95 backdrop-blur-sm shadow-md py-4 md:hidden animate-fadeIn">
+        <div className="absolute top-16 left-0 w-full bg-white/95 backdrop-blur-sm shadow-md py-4 md:hidden animate-fadeIn">
           <div className="container mx-auto px-4 flex flex-col space-y-4">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-muted-foreground hover:text-highlight transition-colors duration-300 py-2"
+                className="text-foreground hover:text-highlight transition-colors duration-300 py-2 font-typewriter"
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}
@@ -90,7 +90,7 @@ const Navbar = () => {
               rel="noopener noreferrer" 
               onClick={() => setIsOpen(false)}
             >
-              <Button variant="outline" className="w-full border-highlight text-highlight hover:bg-highlight/10">
+              <Button variant="outline" className="w-full border-highlight text-highlight hover:bg-highlight/10 font-typewriter">
                 Resume
               </Button>
             </a>

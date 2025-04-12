@@ -4,11 +4,11 @@ import { Github, Linkedin, Twitter } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="py-10 border-t border-border/50">
+    <footer className="py-10 border-t border-border/50 bg-white">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
-            <p className="text-muted-foreground text-sm">
+            <p className="text-foreground text-sm font-typewriter">
               © {new Date().getFullYear()} Charan Tejayadav. All rights reserved.
             </p>
           </div>
@@ -18,7 +18,7 @@ const Footer = () => {
               href="https://github.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-highlight transition-colors"
+              className="text-foreground hover:text-highlight transition-colors"
             >
               <Github size={20} />
             </a>
@@ -26,7 +26,7 @@ const Footer = () => {
               href="https://linkedin.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-highlight transition-colors"
+              className="text-foreground hover:text-highlight transition-colors"
             >
               <Linkedin size={20} />
             </a>
@@ -34,7 +34,7 @@ const Footer = () => {
               href="https://twitter.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-highlight transition-colors"
+              className="text-foreground hover:text-highlight transition-colors"
             >
               <Twitter size={20} />
             </a>
