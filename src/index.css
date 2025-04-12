@@ -1,7 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -52,7 +52,7 @@
   }
 
   .section-heading {
-    @apply text-2xl sm:text-3xl font-bold text-foreground relative inline-block mb-8 font-typewriter;
+    @apply text-2xl sm:text-3xl font-bold text-foreground relative inline-block mb-8 font-luxury;
   }
   
   .section-heading::after {

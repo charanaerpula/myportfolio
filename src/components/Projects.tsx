@@ -55,7 +55,7 @@ const Projects = () => {
     <section id="projects" className="py-24 bg-muted/5 border-t border-b border-border/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold font-typewriter mb-4 text-foreground">Featured Projects</h2>
+          <h2 className="text-3xl md:text-4xl font-bold font-luxury mb-4 text-foreground">Featured Projects</h2>
           <div className="h-1 w-24 bg-highlight mx-auto"></div>
           <p className="mt-6 text-foreground/80 max-w-2xl mx-auto">
             Here are some of the projects I've worked on. Each project showcases different skills and technologies.
@@ -66,15 +66,17 @@ const Projects = () => {
           {featuredProjects.map((project, index) => (
             <Card 
               key={index} 
-              className="bg-white border border-border/30 hover:shadow-xl transition-all duration-300 hover:border-highlight/30 overflow-hidden"
+              className="bg-white border border-border/30 hover:shadow-xl transition-all duration-300 hover:border-highlight/30 overflow-hidden card-animation"
               style={{
                 animationDelay: `${index * 0.2}s`,
                 animationFillMode: 'both'
               }}
             >
-              <div className="h-3 bg-highlight w-full"></div>
+              <div className="h-24 bg-gradient-to-r from-highlight/80 to-highlight/30 w-full flex items-center justify-center">
+                <span className="text-white text-2xl font-luxury">{project.title.charAt(0)}</span>
+              </div>
               <CardHeader className="pb-2">
-                <CardTitle className="text-xl text-foreground font-typewriter">{project.title}</CardTitle>
+                <CardTitle className="text-xl text-foreground font-luxury">{project.title}</CardTitle>
                 <CardDescription className="text-foreground/80 mt-2">{project.description}</CardDescription>
               </CardHeader>
               <CardContent className="pt-2">
@@ -91,8 +93,8 @@ const Projects = () => {
                   )}
                 </div>
               </CardContent>
-              <CardFooter className="flex justify-between items-center pt-2">
-                <Button variant="ghost" size="sm" className="text-highlight hover:text-highlight/80 hover:bg-highlight/5 font-typewriter p-0 h-auto">
+              <CardFooter className="flex justify-between items-center pt-2 border-t border-border/20 mt-4">
+                <Button variant="ghost" size="sm" className="text-highlight hover:text-highlight/80 hover:bg-highlight/5 font-luxury p-0 h-auto">
                   View Details <ArrowRight size={14} className="ml-1" />
                 </Button>
                 <div className="flex space-x-3">
@@ -113,7 +115,7 @@ const Projects = () => {
         </div>
         
         <div className="text-center mt-16">
-          <Button variant="outline" className="border-highlight text-highlight hover:bg-highlight/5 font-typewriter">
+          <Button variant="outline" className="border-highlight text-highlight hover:bg-highlight/5 font-luxury">
             View All Projects <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>

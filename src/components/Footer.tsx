@@ -15,7 +15,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 py-12">
           <div className="md:col-span-5">
-            <a href="#home" className="text-xl font-bold text-foreground font-typewriter inline-block mb-4">
+            <a href="#home" className="text-xl font-bold text-foreground font-luxury inline-block mb-4">
               <span className="text-highlight">{'<'}</span>
               Charan
               <span className="text-highlight">{'/'}</span>
@@ -28,7 +28,7 @@ const Footer = () => {
           </div>
           
           <div className="md:col-span-3">
-            <h3 className="text-lg font-typewriter mb-4 text-foreground">Quick Links</h3>
+            <h3 className="text-lg font-luxury mb-4 text-foreground">Quick Links</h3>
             <ul className="space-y-2">
               <li>
                 <a href="#home" className="text-foreground/70 hover:text-highlight transition-colors">Home</a>
@@ -49,7 +49,7 @@ const Footer = () => {
           </div>
           
           <div className="md:col-span-4">
-            <h3 className="text-lg font-typewriter mb-4 text-foreground">Get In Touch</h3>
+            <h3 className="text-lg font-luxury mb-4 text-foreground">Get In Touch</h3>
             <p className="text-foreground/70 mb-4">
               Have a question or want to work together?
             </p>
@@ -63,7 +63,7 @@ const Footer = () => {
         </div>
         
         <div className="py-6 border-t border-border/30 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-foreground/70 text-sm font-typewriter mb-4 md:mb-0">
+          <p className="text-foreground/70 text-sm mb-4 md:mb-0">
             © {new Date().getFullYear()} Charan Tejayadav. All rights reserved.
           </p>
           

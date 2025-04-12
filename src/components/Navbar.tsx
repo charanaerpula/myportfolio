@@ -40,7 +40,7 @@ const Navbar = () => {
       )}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <a href="#home" className="text-xl font-bold text-foreground font-typewriter">
+        <a href="#home" className="text-xl font-bold text-foreground font-luxury">
           <span className="text-highlight">{'<'}</span>
           Charan
           <span className="text-highlight">{'/'}</span>
@@ -53,14 +53,14 @@ const Navbar = () => {
             <a
               key={item.name}
               href={item.href}
-              className="text-foreground/80 hover:text-highlight transition-colors duration-300 font-typewriter text-sm relative group"
+              className="text-foreground/80 hover:text-highlight transition-colors duration-300 font-luxury text-sm relative group"
             >
               {item.name}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-highlight transition-all duration-300 group-hover:w-full"></span>
             </a>
           ))}
           <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" className="border-highlight text-highlight hover:bg-highlight/10 font-typewriter text-sm">
+            <Button variant="outline" className="border-highlight text-highlight hover:bg-highlight/10 font-luxury text-sm">
               Resume
             </Button>
           </a>
@@ -84,7 +84,7 @@ const Navbar = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-foreground/80 hover:text-highlight transition-colors duration-300 py-2 font-typewriter"
+                className="text-foreground/80 hover:text-highlight transition-colors duration-300 py-2 font-luxury"
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}
@@ -96,7 +96,7 @@ const Navbar = () => {
               rel="noopener noreferrer" 
               onClick={() => setIsOpen(false)}
             >
-              <Button variant="outline" className="w-full border-highlight text-highlight hover:bg-highlight/10 font-typewriter">
+              <Button variant="outline" className="w-full border-highlight text-highlight hover:bg-highlight/10 font-luxury">
                 Resume
               </Button>
             </a>

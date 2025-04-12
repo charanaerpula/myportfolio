@@ -46,7 +46,7 @@ const Skills = () => {
     <section id="skills" className="py-24 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold font-typewriter mb-4 text-foreground">Skills & Technologies</h2>
+          <h2 className="text-3xl md:text-4xl font-bold font-luxury mb-4 text-foreground">Skills & Technologies</h2>
           <div className="h-1 w-24 bg-highlight mx-auto"></div>
           <p className="mt-6 text-foreground/80 max-w-2xl mx-auto">
             I've worked with a variety of technologies and frameworks to create exceptional web applications.
@@ -71,7 +71,7 @@ const Skills = () => {
                   </div>
                 )}
                 <div>
-                  <h3 className="text-xl text-foreground font-typewriter">{category.title}</h3>
+                  <h3 className="text-xl text-foreground font-luxury">{category.title}</h3>
                   <p className="text-foreground/70 text-sm">{category.description}</p>
                 </div>
               </div>

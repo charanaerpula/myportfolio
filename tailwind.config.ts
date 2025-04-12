@@ -121,7 +121,7 @@ export default {
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],
 				mono: ['JetBrains Mono', 'monospace'],
-				typewriter: ['Special Elite', 'cursive'],
+				luxury: ['Playfair Display', 'serif'],
 			}
 		}
 	},
