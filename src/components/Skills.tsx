@@ -45,7 +45,7 @@ const Skills = () => {
   return (
     <section id="skills" className="py-24 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fadeIn">
           <h2 className="text-3xl md:text-4xl font-bold font-luxury mb-4 text-foreground">Skills & Technologies</h2>
           <div className="h-1 w-24 bg-highlight mx-auto"></div>
           <p className="mt-6 text-foreground/80 max-w-2xl mx-auto">
@@ -58,7 +58,7 @@ const Skills = () => {
           {skillCategories.map((category, index) => (
             <div 
               key={index} 
-              className="bg-white p-8 rounded-lg border border-border/30 shadow-md hover:shadow-lg transition-all duration-300"
+              className="bg-white p-8 rounded-lg border border-border/30 shadow-card hover:shadow-hover transition-all duration-300 hover:border-highlight/30"
               style={{
                 animationDelay: `${index * 0.2}s`,
                 animationFillMode: 'both'
@@ -66,7 +66,7 @@ const Skills = () => {
             >
               <div className="flex items-center gap-4 mb-6">
                 {category.icon && (
-                  <div className={`p-3 rounded-lg ${category.iconBg} text-highlight`}>
+                  <div className={`p-3 rounded-lg ${category.iconBg} text-highlight shadow-sm`}>
                     {category.icon}
                   </div>
                 )}
@@ -78,7 +78,7 @@ const Skills = () => {
               
               <div className="grid grid-cols-2 gap-y-3">
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="flex items-center gap-2 text-foreground/80">
+                  <div key={skillIndex} className="flex items-center gap-2 text-foreground/80 hover-lift p-1 rounded transition-all">
                     <CheckCircle2 size={14} className="text-highlight flex-shrink-0" />
                     <span className="text-sm">{skill}</span>
                   </div>

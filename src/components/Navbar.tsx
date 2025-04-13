@@ -36,7 +36,7 @@ const Navbar = () => {
     <header 
       className={cn(
         'fixed top-0 w-full z-50 transition-all duration-300',
-        scrolled ? 'bg-white/95 backdrop-blur-sm shadow-sm py-3' : 'py-5 bg-white'
+        scrolled ? 'bg-white/95 backdrop-blur-sm shadow-soft py-3' : 'py-5 bg-white'
       )}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
@@ -56,11 +56,11 @@ const Navbar = () => {
               className="text-foreground/80 hover:text-highlight transition-colors duration-300 font-luxury text-sm relative group"
             >
               {item.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-highlight transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-highlight transition-all duration-300 group-hover:w-full shadow-sm"></span>
             </a>
           ))}
           <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" className="border-highlight text-highlight hover:bg-highlight/10 font-luxury text-sm">
+            <Button variant="outline" className="border-highlight text-highlight hover:bg-highlight/10 font-luxury text-sm shadow-button hover:shadow-hover transition-all">
               Resume
             </Button>
           </a>
@@ -78,7 +78,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="absolute top-16 left-0 w-full bg-white shadow-md py-4 md:hidden animate-fadeIn">
+        <div className="absolute top-16 left-0 w-full bg-white shadow-soft py-4 md:hidden animate-fadeIn">
           <div className="container mx-auto px-4 flex flex-col space-y-4">
             {navItems.map((item) => (
               <a
@@ -96,7 +96,7 @@ const Navbar = () => {
               rel="noopener noreferrer" 
               onClick={() => setIsOpen(false)}
             >
-              <Button variant="outline" className="w-full border-highlight text-highlight hover:bg-highlight/10 font-luxury">
+              <Button variant="outline" className="w-full border-highlight text-highlight hover:bg-highlight/10 font-luxury shadow-button">
                 Resume
               </Button>
             </a>

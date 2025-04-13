@@ -7,7 +7,7 @@ const About = () => {
     <section id="about" className="py-24 bg-white relative">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
-          <div className="w-full lg:w-1/2">
+          <div className="w-full lg:w-1/2 animate-fadeIn">
             <h2 className="section-heading font-luxury mb-8">About Me</h2>
             <div className="space-y-4 text-foreground/80">
               <p className="leading-relaxed">
@@ -36,22 +36,22 @@ const About = () => {
           
           <div className="w-full lg:w-1/2">
             <div className="grid grid-cols-2 gap-4">
-              <div className="p-6 bg-white shadow-lg rounded-lg border border-highlight/10 hover:border-highlight/30 transition-all">
+              <div className="p-6 bg-white shadow-card hover:shadow-hover rounded-lg border border-highlight/10 hover:border-highlight/30 transition-all duration-300 hover:-translate-y-1">
                 <h3 className="font-luxury text-lg mb-2 text-foreground">Frontend Development</h3>
                 <p className="text-sm text-foreground/70">Creating responsive, interactive user interfaces with modern frameworks</p>
               </div>
               
-              <div className="p-6 bg-white shadow-lg rounded-lg border border-highlight/10 hover:border-highlight/30 transition-all">
+              <div className="p-6 bg-white shadow-card hover:shadow-hover rounded-lg border border-highlight/10 hover:border-highlight/30 transition-all duration-300 hover:-translate-y-1">
                 <h3 className="font-luxury text-lg mb-2 text-foreground">Backend Development</h3>
                 <p className="text-sm text-foreground/70">Building robust server-side applications and APIs</p>
               </div>
               
-              <div className="p-6 bg-white shadow-lg rounded-lg border border-highlight/10 hover:border-highlight/30 transition-all">
+              <div className="p-6 bg-white shadow-card hover:shadow-hover rounded-lg border border-highlight/10 hover:border-highlight/30 transition-all duration-300 hover:-translate-y-1">
                 <h3 className="font-luxury text-lg mb-2 text-foreground">AI Integration</h3>
                 <p className="text-sm text-foreground/70">Leveraging AI technologies to enhance web applications</p>
               </div>
               
-              <div className="p-6 bg-white shadow-lg rounded-lg border border-highlight/10 hover:border-highlight/30 transition-all">
+              <div className="p-6 bg-white shadow-card hover:shadow-hover rounded-lg border border-highlight/10 hover:border-highlight/30 transition-all duration-300 hover:-translate-y-1">
                 <h3 className="font-luxury text-lg mb-2 text-foreground">Consulting</h3>
                 <p className="text-sm text-foreground/70">Providing technical guidance and solutions for businesses</p>
               </div>

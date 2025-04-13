@@ -54,7 +54,7 @@ const Projects = () => {
   return (
     <section id="projects" className="py-24 bg-muted/5 border-t border-b border-border/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fadeIn">
           <h2 className="text-3xl md:text-4xl font-bold font-luxury mb-4 text-foreground">Featured Projects</h2>
           <div className="h-1 w-24 bg-highlight mx-auto"></div>
           <p className="mt-6 text-foreground/80 max-w-2xl mx-auto">
@@ -66,14 +66,15 @@ const Projects = () => {
           {featuredProjects.map((project, index) => (
             <Card 
               key={index} 
-              className="bg-white border border-border/30 hover:shadow-xl transition-all duration-300 hover:border-highlight/30 overflow-hidden card-animation"
+              className="bg-white border border-border/30 shadow-card hover:shadow-hover transition-all duration-300 hover:border-highlight/30 overflow-hidden card-animation"
               style={{
                 animationDelay: `${index * 0.2}s`,
                 animationFillMode: 'both'
               }}
             >
-              <div className="h-24 bg-gradient-to-r from-highlight/80 to-highlight/30 w-full flex items-center justify-center">
-                <span className="text-white text-2xl font-luxury">{project.title.charAt(0)}</span>
+              <div className="h-24 bg-gradient-to-r from-highlight/80 to-highlight/30 w-full flex items-center justify-center relative overflow-hidden">
+                <div className="shimmer absolute inset-0"></div>
+                <span className="text-white text-2xl font-luxury relative z-10">{project.title.charAt(0)}</span>
               </div>
               <CardHeader className="pb-2">
                 <CardTitle className="text-xl text-foreground font-luxury">{project.title}</CardTitle>
@@ -82,12 +83,12 @@ const Projects = () => {
               <CardContent className="pt-2">
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.slice(0, 3).map((tech, techIndex) => (
-                    <Badge key={techIndex} variant="outline" className="bg-white border-highlight/50 text-foreground/80">
+                    <Badge key={techIndex} variant="outline" className="bg-white border-highlight/50 text-foreground/80 shadow-sm">
                       {tech}
                     </Badge>
                   ))}
                   {project.technologies.length > 3 && (
-                    <Badge variant="outline" className="bg-white border-highlight/50 text-foreground/80">
+                    <Badge variant="outline" className="bg-white border-highlight/50 text-foreground/80 shadow-sm">
                       +{project.technologies.length - 3}
                     </Badge>
                   )}
@@ -114,8 +115,8 @@ const Projects = () => {
           ))}
         </div>
         
-        <div className="text-center mt-16">
-          <Button variant="outline" className="border-highlight text-highlight hover:bg-highlight/5 font-luxury">
+        <div className="text-center mt-16 animate-fadeIn" style={{ animationDelay: '0.5s' }}>
+          <Button variant="outline" className="border-highlight text-highlight hover:bg-highlight/5 font-luxury shadow-button hover:shadow-hover transition-all">
             View All Projects <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>

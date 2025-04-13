@@ -16,7 +16,7 @@ const Contact = () => {
   return (
     <section id="contact" className="py-24 bg-muted/5 border-t border-border/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fadeIn">
           <h2 className="text-3xl md:text-4xl font-bold font-luxury mb-4 text-foreground">Get In Touch</h2>
           <div className="h-1 w-24 bg-highlight mx-auto"></div>
           <p className="mt-6 text-foreground/80 max-w-2xl mx-auto">
@@ -27,12 +27,12 @@ const Contact = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mt-8">
           <div className="lg:col-span-5 space-y-8">
-            <div className="bg-white p-8 border border-border/30 rounded-lg shadow-md">
+            <div className="bg-white p-8 border border-border/30 rounded-lg shadow-card hover:shadow-hover transition-all duration-300">
               <h3 className="text-xl text-foreground font-luxury mb-6">Contact Information</h3>
               
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-full bg-highlight/10 text-highlight">
+                  <div className="p-3 rounded-full bg-highlight/10 text-highlight shadow-sm">
                     <Mail size={20} />
                   </div>
                   <div>
@@ -44,7 +44,7 @@ const Contact = () => {
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-full bg-highlight/10 text-highlight">
+                  <div className="p-3 rounded-full bg-highlight/10 text-highlight shadow-sm">
                     <Phone size={20} />
                   </div>
                   <div>
@@ -56,7 +56,7 @@ const Contact = () => {
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-full bg-highlight/10 text-highlight">
+                  <div className="p-3 rounded-full bg-highlight/10 text-highlight shadow-sm">
                     <MapPin size={20} />
                   </div>
                   <div>
@@ -68,7 +68,7 @@ const Contact = () => {
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-full bg-highlight/10 text-highlight">
+                  <div className="p-3 rounded-full bg-highlight/10 text-highlight shadow-sm">
                     <MessageSquare size={20} />
                   </div>
                   <div>
@@ -83,7 +83,7 @@ const Contact = () => {
           </div>
           
           <div className="lg:col-span-7">
-            <form onSubmit={handleSubmit} className="bg-white p-8 border border-border/30 rounded-lg shadow-md space-y-6">
+            <form onSubmit={handleSubmit} className="bg-white p-8 border border-border/30 rounded-lg shadow-card hover:shadow-hover transition-all duration-300 space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm text-foreground font-luxury">Name</label>
@@ -127,7 +127,7 @@ const Contact = () => {
                 />
               </div>
               
-              <Button type="submit" className="bg-highlight text-white hover:bg-highlight/90 font-luxury w-full sm:w-auto">
+              <Button type="submit" className="bg-highlight text-white hover:bg-highlight/90 font-luxury w-full sm:w-auto shadow-button hover:shadow-hover transition-all">
                 Send Message <Send size={16} className="ml-2" />
               </Button>
             </form>

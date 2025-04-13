@@ -72,7 +72,7 @@ const Footer = () => {
               href="https://github.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-foreground/70 hover:text-highlight transition-colors"
+              className="text-foreground/70 hover:text-highlight transition-colors hover:scale-110 transform duration-200"
               aria-label="GitHub"
             >
               <Github size={18} />
@@ -81,7 +81,7 @@ const Footer = () => {
               href="https://linkedin.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-foreground/70 hover:text-highlight transition-colors"
+              className="text-foreground/70 hover:text-highlight transition-colors hover:scale-110 transform duration-200"
               aria-label="LinkedIn"
             >
               <Linkedin size={18} />
@@ -90,7 +90,7 @@ const Footer = () => {
               href="https://twitter.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-foreground/70 hover:text-highlight transition-colors"
+              className="text-foreground/70 hover:text-highlight transition-colors hover:scale-110 transform duration-200"
               aria-label="Twitter"
             >
               <Twitter size={18} />
@@ -99,7 +99,7 @@ const Footer = () => {
               href="https://instagram.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-foreground/70 hover:text-highlight transition-colors"
+              className="text-foreground/70 hover:text-highlight transition-colors hover:scale-110 transform duration-200"
               aria-label="Instagram"
             >
               <Instagram size={18} />
@@ -108,7 +108,7 @@ const Footer = () => {
           
           <button 
             onClick={scrollToTop}
-            className="fixed bottom-6 right-6 p-3 rounded-full bg-highlight text-white shadow-lg hover:bg-highlight/90 transition-colors focus:outline-none"
+            className="fixed bottom-6 right-6 p-3 rounded-full bg-highlight text-white shadow-button hover:shadow-hover hover:bg-highlight/90 transition-all focus:outline-none animate-pulse"
             aria-label="Scroll to top"
           >
             <ArrowUp size={18} />
