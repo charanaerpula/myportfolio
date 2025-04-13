@@ -1,6 +1,7 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { CheckCircle2, Code, Database, Globe, Cpu } from 'lucide-react';
+import { HoverCard, HoverCardTrigger, HoverCardContent } from '@/components/ui/hover-card';
 
 interface SkillCategory {
   title: string;
@@ -42,6 +43,8 @@ const skillCategories: SkillCategory[] = [
 ];
 
 const Skills = () => {
+  const [activeCategory, setActiveCategory] = useState<number | null>(null);
+
   return (
     <section id="skills" className="py-24 bg-white">
       <div className="container mx-auto px-4">
@@ -58,7 +61,10 @@ const Skills = () => {
           {skillCategories.map((category, index) => (
             <div 
               key={index} 
-              className="bg-white p-8 rounded-lg border border-border/30 shadow-card hover:shadow-hover transition-all duration-300 hover:border-highlight/30"
+              className={`bg-white p-8 rounded-lg border border-border/30 shadow-card transition-all duration-500 
+                ${activeCategory === index ? 'shadow-hover border-highlight/30 -translate-y-2' : 'hover:shadow-hover hover:border-highlight/30 hover:-translate-y-1'}`}
+              onMouseEnter={() => setActiveCategory(index)}
+              onMouseLeave={() => setActiveCategory(null)}
               style={{
                 animationDelay: `${index * 0.2}s`,
                 animationFillMode: 'both'
@@ -66,7 +72,7 @@ const Skills = () => {
             >
               <div className="flex items-center gap-4 mb-6">
                 {category.icon && (
-                  <div className={`p-3 rounded-lg ${category.iconBg} text-highlight shadow-sm`}>
+                  <div className={`p-3 rounded-lg ${category.iconBg} text-highlight shadow-sm transform transition-transform ${activeCategory === index ? 'scale-110' : ''}`}>
                     {category.icon}
                   </div>
                 )}
@@ -78,10 +84,24 @@ const Skills = () => {
               
               <div className="grid grid-cols-2 gap-y-3">
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="flex items-center gap-2 text-foreground/80 hover-lift p-1 rounded transition-all">
-                    <CheckCircle2 size={14} className="text-highlight flex-shrink-0" />
-                    <span className="text-sm">{skill}</span>
-                  </div>
+                  <HoverCard key={skillIndex}>
+                    <HoverCardTrigger>
+                      <div className="flex items-center gap-2 text-foreground/80 hover-lift p-1 rounded transition-all hover:bg-highlight/5 cursor-pointer group">
+                        <CheckCircle2 size={14} className="text-highlight flex-shrink-0 group-hover:scale-125 transition-transform duration-300" />
+                        <span className="text-sm group-hover:text-highlight transition-colors">{skill}</span>
+                      </div>
+                    </HoverCardTrigger>
+                    <HoverCardContent className="bg-white border border-highlight/30 shadow-hover">
+                      <div className="text-sm">
+                        <strong>{skill}</strong>
+                        <p className="text-xs text-foreground/70 mt-1">
+                          {skillIndex % 2 === 0 
+                            ? `Advanced knowledge and practical experience with ${skill}.` 
+                            : `Working proficiency and implementation experience with ${skill}.`}
+                        </p>
+                      </div>
+                    </HoverCardContent>
+                  </HoverCard>
                 ))}
               </div>
             </div>
