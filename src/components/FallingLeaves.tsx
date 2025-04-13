@@ -15,29 +15,29 @@ const FallingLeaves = () => {
   const [leaves, setLeaves] = useState<Leaf[]>([]);
   
   useEffect(() => {
-    // Create fewer leaves with longer animation durations for a more cinematic feel
-    const newLeaves = Array.from({ length: 6 }, (_, index) => ({
+    // Create more leaves with faster animation durations
+    const newLeaves = Array.from({ length: 10 }, (_, index) => ({
       id: index,
       left: Math.random() * 100, // Random position from 0-100% of screen width
-      animationDuration: 15 + Math.random() * 20, // Between 15-35 seconds to fall (much slower)
-      delay: Math.random() * 25, // Longer random delay up to 25 seconds
+      animationDuration: 8 + Math.random() * 12, // Between 8-20 seconds to fall (faster than before)
+      delay: Math.random() * 15, // Random delay up to 15 seconds
       rotation: Math.random() * 360, // Random initial rotation
-      size: 0.7 + Math.random() * 0.5, // Random size between 0.7x and 1.2x
-      rotationSpeed: 12 + Math.random() * 8, // Between 12-20 seconds for a full rotation
+      size: 0.8 + Math.random() * 0.6, // Random size between 0.8x and 1.4x (larger leaves)
+      rotationSpeed: 8 + Math.random() * 6, // Between 8-14 seconds for a full rotation (faster spin)
     }));
     
     setLeaves(newLeaves);
     
-    // Recreate leaves less frequently for more natural, cinematic effect
+    // Recreate leaves more frequently for more continuous animation effect
     const interval = setInterval(() => {
       setLeaves(prev => {
         return prev.map(leaf => ({
           ...leaf,
-          delay: Math.random() * 25,
+          delay: Math.random() * 15,
           left: Math.random() * 100,
         }));
       });
-    }, 40000); // Recreate every 40 seconds
+    }, 25000); // Recreate every 25 seconds
     
     return () => clearInterval(interval);
   }, []);
@@ -52,7 +52,7 @@ const FallingLeaves = () => {
             left: `${leaf.left}%`,
             animation: `leafFall ${leaf.animationDuration}s linear ${leaf.delay}s infinite`,
             transform: `rotate(${leaf.rotation}deg) scale(${leaf.size})`,
-            opacity: 0.7, // Slightly transparent leaves for better text visibility
+            opacity: 0.85, // Increased opacity for better visibility
           }}
         >
           <img 
