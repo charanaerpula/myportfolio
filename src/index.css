@@ -124,6 +124,24 @@ html {
   animation: shimmer 2s infinite;
 }
 
+/* Leaf falling animation */
+@keyframes leafFall {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
 /* Interactive hover effects */
 .hover-underline-animation {
   display: inline-block;
