@@ -14,7 +14,7 @@ const Index = () => {
     <div className="min-h-screen bg-white">
       <FallingLeaves />
       <Navbar />
-      <main>
+      <main className="relative z-10"> {/* Ensure content is above leaves */}
         <Hero />
         <About />
         <Projects />
