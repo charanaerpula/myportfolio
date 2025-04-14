@@ -16,19 +16,19 @@ const FallingLeaves = () => {
   
   useEffect(() => {
     // Create more leaves with faster animation durations
-    const newLeaves = Array.from({ length: 10 }, (_, index) => ({
+    const newLeaves = Array.from({ length: 15 }, (_, index) => ({
       id: index,
       left: Math.random() * 100, // Random position from 0-100% of screen width
-      animationDuration: 8 + Math.random() * 12, // Between 8-20 seconds to fall (faster than before)
+      animationDuration: 8 + Math.random() * 12, // Between 8-20 seconds to fall
       delay: Math.random() * 15, // Random delay up to 15 seconds
       rotation: Math.random() * 360, // Random initial rotation
-      size: 0.8 + Math.random() * 0.6, // Random size between 0.8x and 1.4x (larger leaves)
-      rotationSpeed: 8 + Math.random() * 6, // Between 8-14 seconds for a full rotation (faster spin)
+      size: 0.8 + Math.random() * 0.6, // Random size between 0.8x and 1.4x
+      rotationSpeed: 8 + Math.random() * 6, // Between 8-14 seconds for a full rotation
     }));
     
     setLeaves(newLeaves);
     
-    // Recreate leaves more frequently for more continuous animation effect
+    // Recreate leaves for continuous animation effect
     const interval = setInterval(() => {
       setLeaves(prev => {
         return prev.map(leaf => ({
@@ -43,7 +43,7 @@ const FallingLeaves = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
+    <div className="fixed inset-0 w-full h-full pointer-events-none overflow-hidden" style={{ zIndex: 5 }}>
       {leaves.map((leaf) => (
         <div
           key={leaf.id}

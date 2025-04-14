@@ -11,10 +11,10 @@ import FallingLeaves from '@/components/FallingLeaves';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white relative overflow-hidden">
       <FallingLeaves />
       <Navbar />
-      <main className="relative z-10"> {/* Ensure content is above leaves */}
+      <main className="relative z-10"> {/* Content has z-index 10 */}
         <Hero />
         <About />
         <Projects />
