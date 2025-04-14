@@ -13,8 +13,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white relative overflow-hidden">
       <FallingLeaves />
-      <Navbar />
-      <main className="relative z-10"> {/* Content has z-index 10 */}
+      <Navbar /> {/* Navbar has its own z-index that should be higher */}
+      <main className="relative z-10"> {/* Content has z-index 10, which is lower than leaves at 20 */}
         <Hero />
         <About />
         <Projects />

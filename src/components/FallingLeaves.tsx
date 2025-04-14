@@ -43,7 +43,7 @@ const FallingLeaves = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 w-full h-full pointer-events-none overflow-hidden" style={{ zIndex: 5 }}>
+    <div className="fixed inset-0 w-full h-full pointer-events-none overflow-hidden" style={{ zIndex: 20 }}>
       {leaves.map((leaf) => (
         <div
           key={leaf.id}
