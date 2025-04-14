@@ -15,15 +15,15 @@ const FallingLeaves = () => {
   const [leaves, setLeaves] = useState<Leaf[]>([]);
   
   useEffect(() => {
-    // Create more leaves with faster animation durations
-    const newLeaves = Array.from({ length: 15 }, (_, index) => ({
+    // Reduced number of leaves and increased fall duration
+    const newLeaves = Array.from({ length: 10 }, (_, index) => ({
       id: index,
       left: Math.random() * 100, // Random position from 0-100% of screen width
-      animationDuration: 8 + Math.random() * 12, // Between 8-20 seconds to fall
-      delay: Math.random() * 15, // Random delay up to 15 seconds
+      animationDuration: 15 + Math.random() * 10, // Between 15-25 seconds to fall (slower)
+      delay: Math.random() * 20, // Random delay up to 20 seconds
       rotation: Math.random() * 360, // Random initial rotation
-      size: 0.8 + Math.random() * 0.6, // Random size between 0.8x and 1.4x
-      rotationSpeed: 8 + Math.random() * 6, // Between 8-14 seconds for a full rotation
+      size: 0.4 + Math.random() * 0.3, // Smaller size between 0.4x and 0.7x
+      rotationSpeed: 10 + Math.random() * 5, // Between 10-15 seconds for a full rotation
     }));
     
     setLeaves(newLeaves);
@@ -33,11 +33,11 @@ const FallingLeaves = () => {
       setLeaves(prev => {
         return prev.map(leaf => ({
           ...leaf,
-          delay: Math.random() * 15,
+          delay: Math.random() * 20,
           left: Math.random() * 100,
         }));
       });
-    }, 25000); // Recreate every 25 seconds
+    }, 30000); // Recreate every 30 seconds
     
     return () => clearInterval(interval);
   }, []);
@@ -47,12 +47,12 @@ const FallingLeaves = () => {
       {leaves.map((leaf) => (
         <div
           key={leaf.id}
-          className="absolute top-0 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20"
+          className="absolute top-0 w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16"
           style={{
             left: `${leaf.left}%`,
             animation: `leafFall ${leaf.animationDuration}s linear ${leaf.delay}s infinite`,
             transform: `rotate(${leaf.rotation}deg) scale(${leaf.size})`,
-            opacity: 0.85, // Increased opacity for better visibility
+            opacity: 0.7, // Slightly reduced opacity
           }}
         >
           <img 
@@ -70,3 +70,4 @@ const FallingLeaves = () => {
 };
 
 export default FallingLeaves;
+
