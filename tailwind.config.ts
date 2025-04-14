@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -13,8 +12,16 @@ export default {
 	theme: {
 		container: {
 			center: true,
-			padding: '2rem',
+			padding: {
+				DEFAULT: '1rem',
+				sm: '1.5rem',
+				md: '2rem'
+			},
 			screens: {
+				'sm': '640px',
+				'md': '768px',
+				'lg': '1024px',
+				'xl': '1280px',
 				'2xl': '1400px'
 			}
 		},
@@ -143,6 +150,28 @@ export default {
 				'hover': '0 15px 35px rgba(0, 0, 0, 0.12)',
 				'card': '0 5px 15px rgba(0, 0, 0, 0.06)',
 				'button': '0 4px 10px rgba(85, 107, 47, 0.2)',
+			},
+			fontSize: {
+				'2xs': '0.625rem', // 10px
+				'xs': '0.75rem',   // 12px
+				'sm': '0.875rem',  // 14px
+				'base': '1rem',    // 16px
+				'lg': '1.125rem',  // 18px
+				'xl': '1.25rem',   // 20px
+				'2xl': '1.5rem',   // 24px
+				'3xl': '1.875rem', // 30px
+				'4xl': '2.25rem',  // 36px
+				'5xl': '3rem',     // 48px
+				'6xl': '3.75rem',  // 60px',
+			},
+			spacing: {
+				'xs': '0.25rem',   // 4px
+				'sm': '0.5rem',    // 8px
+				'md': '1rem',      // 16px
+				'lg': '1.5rem',    // 24px
+				'xl': '2rem',      // 32px
+				'2xl': '2.5rem',   // 40px
+				'3xl': '3rem',     // 48px',
 			}
 		}
 	},

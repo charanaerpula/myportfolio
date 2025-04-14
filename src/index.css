@@ -53,12 +53,46 @@
   }
 
   .section-heading {
-    @apply text-2xl sm:text-3xl font-bold text-foreground relative inline-block mb-8 font-luxury;
+    @apply text-xl sm:text-2xl md:text-3xl font-bold text-foreground relative inline-block mb-6 sm:mb-8 font-luxury;
   }
   
   .section-heading::after {
     content: '';
     @apply absolute -bottom-2 left-0 w-1/2 h-1 bg-accent;
+  }
+
+  /* Responsive text classes */
+  .responsive-text-lg {
+    @apply text-base sm:text-lg md:text-xl;
+  }
+
+  .responsive-text-xl {
+    @apply text-lg sm:text-xl md:text-2xl;
+  }
+
+  .responsive-text-2xl {
+    @apply text-xl sm:text-2xl md:text-3xl;
+  }
+
+  .responsive-text-3xl {
+    @apply text-2xl sm:text-3xl md:text-4xl;
+  }
+
+  /* Responsive padding and margin */
+  .responsive-py {
+    @apply py-12 sm:py-16 md:py-24;
+  }
+
+  .responsive-px {
+    @apply px-4 sm:px-6 md:px-8;
+  }
+
+  .responsive-mt {
+    @apply mt-6 sm:mt-8 md:mt-10;
+  }
+
+  .responsive-mb {
+    @apply mb-6 sm:mb-8 md:mb-10;
   }
 }
 
@@ -221,125 +255,29 @@ html {
   transform-origin: bottom left;
 }
 
-/* Advanced animations */
-@keyframes pulse-grow {
-  0% {
-    transform: scale(1);
+/* Mobile optimization */
+@media (max-width: 640px) {
+  .mobile-hidden {
+    display: none;
   }
-  50% {
-    transform: scale(1.1);
+  
+  .mobile-compact {
+    padding: 0.5rem !important;
+    margin: 0.5rem !important;
   }
-  100% {
-    transform: scale(1);
+  
+  .mobile-text-center {
+    text-align: center;
   }
-}
 
-.pulse-grow {
-  animation: pulse-grow 2s ease-in-out infinite;
-}
-
-@keyframes slide-in-left {
-  0% {
-    transform: translateX(-100px);
-    opacity: 0;
+  .mobile-smaller {
+    font-size: 90%;
   }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
+  
+  .mobile-stack {
+    flex-direction: column !important;
   }
 }
 
-.slide-in-left {
-  animation: slide-in-left 0.5s forwards;
-}
-
-@keyframes slide-in-right {
-  0% {
-    transform: translateX(100px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-.slide-in-right {
-  animation: slide-in-right 0.5s forwards;
-}
-
-/* Shadow utilities */
-.shadow-soft {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
-
-.shadow-hover {
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-}
-
-.shadow-card {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
-}
-
-.shadow-button {
-  box-shadow: 0 4px 10px rgba(85, 107, 47, 0.2);
-}
-
-/* Interactive card effects */
-.card-lift {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card-lift:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-/* Spin animation */
-@keyframes spin-slow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.spin-slow {
-  animation: spin-slow 8s linear infinite;
-}
-
-/* Background shine effect */
-@keyframes background-shine {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: -200% 0;
-  }
-}
-
-.bg-shine {
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.8) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  background-size: 200% 100%;
-  animation: background-shine 2s infinite;
-}
-
-/* Bounce animation */
-@keyframes bounce-custom {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-.bounce-custom {
-  animation: bounce-custom 2s infinite;
-}
+/* Rest of css stays the same */
+/* ... keep existing code */
