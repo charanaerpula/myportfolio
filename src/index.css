@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
@@ -123,7 +124,48 @@ html {
   animation: shimmer 2s infinite;
 }
 
-/* Leaf falling animation - more visible and faster */
+/* Smoother leaf falling animation with horizontal sway */
+@keyframes customLeafFall {
+  0% {
+    transform: translateY(-100px) translateX(-5px) rotate(0deg);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.7;
+  }
+  25% {
+    transform: translateY(25vh) translateX(15px) rotate(90deg);
+  }
+  50% {
+    transform: translateY(50vh) translateX(-15px) rotate(180deg);
+  }
+  75% {
+    transform: translateY(75vh) translateX(10px) rotate(270deg);
+    opacity: 0.7;
+  }
+  95% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(105vh) translateX(-5px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Gentler rotation animation for leaves */
+@keyframes gentleSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+
+/* Legacy animation kept for compatibility */
 @keyframes leafFall {
   0% {
     transform: translateY(-100px) rotate(0deg);
