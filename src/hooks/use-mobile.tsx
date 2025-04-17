@@ -56,3 +56,14 @@ export function useViewportSize() {
 
   return size
 }
+
+// Add a custom hook for determining device type
+export function useDeviceType() {
+  const { width } = useViewportSize();
+  
+  return {
+    isMobile: width < MOBILE_BREAKPOINT,
+    isTablet: width >= MOBILE_BREAKPOINT && width < TABLET_BREAKPOINT,
+    isDesktop: width >= TABLET_BREAKPOINT
+  };
+}

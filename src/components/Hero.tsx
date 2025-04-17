@@ -14,41 +14,41 @@ const Hero = () => {
       className="min-h-[80vh] sm:min-h-[90vh] flex items-center py-8 sm:py-12 md:py-16 bg-white relative"
     >
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 md:gap-8 items-center">
-          <div className="md:col-span-7 space-y-3 sm:space-y-4 md:space-y-6">
-            <p className="text-highlight mb-1 sm:mb-2 fade-in font-luxury italic text-sm sm:text-base">Hi, my name is</p>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 text-foreground font-luxury animate-fadeIn">
+        <div className="grid grid-cols-12 gap-4 items-center">
+          <div className="col-span-7 space-y-3 sm:space-y-4 md:space-y-6">
+            <p className="text-highlight mb-1 sm:mb-2 fade-in font-luxury italic text-xs sm:text-sm">Hi, my name is</p>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 text-foreground font-luxury animate-fadeIn">
               Charan Tejayadav
             </h1>
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-muted-foreground mb-4 sm:mb-6 font-luxury animate-slideUp">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-muted-foreground mb-3 sm:mb-4 font-luxury animate-slideUp">
               Building exceptional digital experiences
             </h2>
-            <p className="text-base sm:text-lg text-foreground/80 max-w-2xl fade-in-slow leading-relaxed">
+            <p className="text-sm sm:text-base text-foreground/80 max-w-2xl fade-in-slow leading-relaxed">
               I'm a specialized web developer focused on creating stunning, responsive applications
               and integrating cutting-edge AI technologies for modern business solutions.
             </p>
             
-            <div className="flex flex-wrap gap-3 sm:gap-4 fade-in-slower pt-3 sm:pt-4">
+            <div className="flex flex-wrap gap-2 sm:gap-3 fade-in-slower pt-2 sm:pt-3">
               <a href="#projects" className="group">
-                <Button className="bg-white border-2 border-highlight text-highlight hover:bg-highlight/5 font-luxury shadow-button hover:shadow-hover transition-all group-hover:translate-x-1 duration-300 text-sm sm:text-base">
-                  View My Work <ArrowRight size={isMobileView ? 14 : 16} className="ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                <Button className="bg-white border-2 border-highlight text-highlight hover:bg-highlight/5 font-luxury shadow-button hover:shadow-hover transition-all group-hover:translate-x-1 duration-300 text-xs sm:text-sm p-2 sm:p-3 h-auto">
+                  View My Work <ArrowRight size={isMobileView ? 12 : 14} className="ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                 </Button>
               </a>
               <a href="#contact" className="group">
-                <Button className="bg-highlight text-white hover:bg-highlight/90 font-luxury shadow-button hover:shadow-hover transition-all group-hover:translate-y-[-2px] duration-300 text-sm sm:text-base">
+                <Button className="bg-highlight text-white hover:bg-highlight/90 font-luxury shadow-button hover:shadow-hover transition-all group-hover:translate-y-[-2px] duration-300 text-xs sm:text-sm p-2 sm:p-3 h-auto">
                   Get In Touch
                 </Button>
               </a>
             </div>
           </div>
           
-          <div className="md:col-span-5 mt-6 md:mt-0">
+          <div className="col-span-5">
             <div className="relative animate-float">
-              <div className="w-48 h-48 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 mx-auto rounded-full border-4 border-highlight/20 overflow-hidden bg-highlight/5 flex items-center justify-center shadow-soft hover:shadow-hover transition-all transform hover:scale-105 duration-300 cursor-pointer">
-                <span className="font-luxury text-highlight text-2xl sm:text-3xl md:text-4xl transform hover:scale-110 transition-all duration-300">CT</span>
+              <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 lg:w-72 lg:h-72 mx-auto rounded-full border-2 sm:border-4 border-highlight/20 overflow-hidden bg-highlight/5 flex items-center justify-center shadow-soft hover:shadow-hover transition-all transform hover:scale-105 duration-300 cursor-pointer">
+                <span className="font-luxury text-highlight text-xl sm:text-2xl md:text-3xl transform hover:scale-110 transition-all duration-300">CT</span>
               </div>
-              <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 w-24 h-24 sm:w-32 sm:h-32 bg-highlight/10 rounded-full z-[-1] animate-pulse"></div>
-              <div className="absolute -bottom-3 -left-3 sm:-bottom-6 sm:-left-6 w-32 h-32 sm:w-48 sm:h-48 bg-highlight/10 rounded-full z-[-1] animate-pulse"></div>
+              <div className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 w-12 h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 bg-highlight/10 rounded-full z-[-1] animate-pulse"></div>
+              <div className="absolute -bottom-1 -left-1 sm:-bottom-3 sm:-left-3 w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-highlight/10 rounded-full z-[-1] animate-pulse"></div>
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@ const Hero = () => {
       
       <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <a href="#about" className="text-highlight hover:text-highlight/80 transition-colors group">
-          <ChevronDown size={isMobileView ? 20 : 24} className="group-hover:translate-y-1 transition-transform duration-300" />
+          <ChevronDown size={isMobileView ? 16 : 20} className="group-hover:translate-y-1 transition-transform duration-300" />
         </a>
       </div>
     </section>

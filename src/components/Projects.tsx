@@ -55,22 +55,22 @@ const Projects = () => {
   const [expandedProject, setExpandedProject] = useState<number | null>(null);
   
   return (
-    <section id="projects" className="py-24 bg-muted/5 border-t border-b border-border/30">
+    <section id="projects" className="py-12 sm:py-16 md:py-24 bg-muted/5 border-t border-b border-border/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fadeIn">
-          <h2 className="text-3xl md:text-4xl font-bold font-luxury mb-4 text-foreground">Featured Projects</h2>
-          <div className="h-1 w-24 bg-highlight mx-auto"></div>
-          <p className="mt-6 text-foreground/80 max-w-2xl mx-auto">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16 animate-fadeIn">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-luxury mb-3 sm:mb-4 text-foreground">Featured Projects</h2>
+          <div className="h-1 w-16 sm:w-24 bg-highlight mx-auto"></div>
+          <p className="mt-4 sm:mt-6 text-sm sm:text-base text-foreground/80 max-w-2xl mx-auto">
             Here are some of the projects I've worked on. Each project showcases different skills and technologies.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mt-4 sm:mt-6 md:mt-8">
           {featuredProjects.map((project, index) => (
             <Card 
               key={index} 
               className={`bg-white border border-border/30 shadow-card transition-all duration-500 overflow-hidden
-                ${hoveredProject === index ? 'shadow-hover border-highlight/30 transform -translate-y-2' : ''}`}
+                ${hoveredProject === index ? 'shadow-hover border-highlight/30 transform -translate-y-1 sm:-translate-y-2' : ''}`}
               onMouseEnter={() => setHoveredProject(index)}
               onMouseLeave={() => setHoveredProject(null)}
               style={{
@@ -78,36 +78,36 @@ const Projects = () => {
                 animationFillMode: 'both'
               }}
             >
-              <div className="h-24 bg-gradient-to-r from-highlight/80 to-highlight/30 w-full flex items-center justify-center relative overflow-hidden group">
+              <div className="h-16 sm:h-20 md:h-24 bg-gradient-to-r from-highlight/80 to-highlight/30 w-full flex items-center justify-center relative overflow-hidden group">
                 <div className={`shimmer absolute inset-0 ${hoveredProject === index ? 'animate-shimmer' : ''}`}></div>
-                <span className="text-white text-2xl font-luxury relative z-10 transform transition-transform duration-300 group-hover:scale-125">{project.title.charAt(0)}</span>
+                <span className="text-white text-xl sm:text-2xl font-luxury relative z-10 transform transition-transform duration-300 group-hover:scale-125">{project.title.charAt(0)}</span>
               </div>
-              <CardHeader className="pb-2">
-                <CardTitle className="text-xl text-foreground font-luxury">{project.title}</CardTitle>
-                <CardDescription className="text-foreground/80 mt-2">{project.description}</CardDescription>
+              <CardHeader className="pb-1 sm:pb-2 p-3 sm:p-4 md:p-6">
+                <CardTitle className="text-sm sm:text-base md:text-xl text-foreground font-luxury">{project.title}</CardTitle>
+                <CardDescription className="text-xs sm:text-sm text-foreground/80 mt-1 sm:mt-2 line-clamp-2 sm:line-clamp-3">{project.description}</CardDescription>
               </CardHeader>
-              <CardContent className="pt-2">
+              <CardContent className="pt-0 sm:pt-1 p-3 sm:p-4 md:p-6">
                 <Collapsible open={expandedProject === index} onOpenChange={() => {
                   setExpandedProject(expandedProject === index ? null : index);
                 }}>
-                  <div className="flex flex-wrap gap-2 mb-2">
-                    {project.technologies.slice(0, 3).map((tech, techIndex) => (
-                      <Badge key={techIndex} variant="outline" className="bg-white border-highlight/50 text-foreground/80 shadow-sm hover:border-highlight hover:bg-highlight/5 transition-colors cursor-default">
+                  <div className="flex flex-wrap gap-1 sm:gap-2">
+                    {project.technologies.slice(0, 2).map((tech, techIndex) => (
+                      <Badge key={techIndex} variant="outline" className="bg-white border-highlight/50 text-foreground/80 shadow-sm hover:border-highlight hover:bg-highlight/5 transition-colors cursor-default text-[10px] sm:text-xs py-0 h-5 sm:h-6">
                         {tech}
                       </Badge>
                     ))}
-                    {project.technologies.length > 3 && (
+                    {project.technologies.length > 2 && (
                       <CollapsibleTrigger asChild>
-                        <Badge variant="outline" className="bg-white border-highlight/50 text-foreground/80 shadow-sm hover:border-highlight hover:bg-highlight/5 transition-all cursor-pointer">
-                          +{project.technologies.length - 3}
+                        <Badge variant="outline" className="bg-white border-highlight/50 text-foreground/80 shadow-sm hover:border-highlight hover:bg-highlight/5 transition-all cursor-pointer text-[10px] sm:text-xs py-0 h-5 sm:h-6">
+                          +{project.technologies.length - 2}
                         </Badge>
                       </CollapsibleTrigger>
                     )}
                   </div>
                   <CollapsibleContent className="animate-accordion-down">
-                    <div className="flex flex-wrap gap-2 mt-2">
-                      {project.technologies.slice(3).map((tech, techIndex) => (
-                        <Badge key={techIndex + 3} variant="outline" className="bg-white border-highlight/50 text-foreground/80 shadow-sm">
+                    <div className="flex flex-wrap gap-1 sm:gap-2 mt-1 sm:mt-2">
+                      {project.technologies.slice(2).map((tech, techIndex) => (
+                        <Badge key={techIndex + 2} variant="outline" className="bg-white border-highlight/50 text-foreground/80 shadow-sm text-[10px] sm:text-xs py-0 h-5 sm:h-6">
                           {tech}
                         </Badge>
                       ))}
@@ -115,19 +115,19 @@ const Projects = () => {
                   </CollapsibleContent>
                 </Collapsible>
               </CardContent>
-              <CardFooter className="flex justify-between items-center pt-2 border-t border-border/20 mt-4">
-                <Button variant="ghost" size="sm" className="text-highlight hover:text-highlight/80 hover:bg-highlight/5 font-luxury p-0 h-auto group">
-                  View Details <ArrowRight size={14} className="ml-1 group-hover:translate-x-1 transition-transform duration-300" />
+              <CardFooter className="flex justify-between items-center pt-1 sm:pt-2 border-t border-border/20 mt-1 sm:mt-2 p-3 sm:p-4 md:p-6">
+                <Button variant="ghost" size="sm" className="text-highlight hover:text-highlight/80 hover:bg-highlight/5 font-luxury p-0 h-auto group text-xs sm:text-sm">
+                  Details <ArrowRight size={12} className="ml-1 group-hover:translate-x-1 transition-transform duration-300" />
                 </Button>
-                <div className="flex space-x-3">
+                <div className="flex space-x-2 sm:space-x-3">
                   {project.githubUrl && (
                     <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-highlight transition-colors transform hover:scale-110 transition-transform">
-                      <Github size={18} />
+                      <Github size={14} className="sm:w-4 sm:h-4" />
                     </a>
                   )}
                   {project.liveUrl && (
                     <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-highlight transition-colors transform hover:scale-110 transition-transform">
-                      <ExternalLink size={18} />
+                      <ExternalLink size={14} className="sm:w-4 sm:h-4" />
                     </a>
                   )}
                 </div>
@@ -136,9 +136,9 @@ const Projects = () => {
           ))}
         </div>
         
-        <div className="text-center mt-16 animate-fadeIn" style={{ animationDelay: '0.5s' }}>
-          <Button variant="outline" className="border-highlight text-highlight hover:bg-highlight/5 font-luxury shadow-button hover:shadow-hover transition-all group">
-            View All Projects <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+        <div className="text-center mt-8 sm:mt-12 animate-fadeIn" style={{ animationDelay: '0.5s' }}>
+          <Button variant="outline" className="border-highlight text-highlight hover:bg-highlight/5 font-luxury shadow-button hover:shadow-hover transition-all group text-xs sm:text-sm h-8 sm:h-10">
+            View All Projects <ArrowRight className="ml-1 sm:ml-2 h-3 w-3 sm:h-4 sm:w-4 group-hover:translate-x-1 transition-transform duration-300" />
           </Button>
         </div>
       </div>
