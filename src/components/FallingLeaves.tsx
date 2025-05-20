@@ -55,7 +55,7 @@ const FallingLeaves = () => {
             left: `${leaf.left}%`,
             animation: `customLeafFall ${leaf.animationDuration}s ease-in-out ${leaf.delay}s infinite`,
             transform: `rotate(${leaf.rotation}deg) scale(${leaf.size})`,
-            opacity: 0.7, // Slightly reduced opacity
+            opacity: 0.4, // Reduced opacity from 0.7 to 0.4 for more transparency
           }}
         >
           <img 
