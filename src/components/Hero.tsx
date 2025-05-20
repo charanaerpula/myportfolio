@@ -1,22 +1,18 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import { useViewportSize } from '@/hooks/use-mobile';
-
 const Hero = () => {
-  const { width } = useViewportSize();
+  const {
+    width
+  } = useViewportSize();
   const isMobileView = width < 768;
-  
-  return (
-    <section 
-      id="home" 
-      className="min-h-[80vh] sm:min-h-[90vh] flex items-center py-8 sm:py-12 md:py-16 bg-white relative"
-    >
+  return <section id="home" className="min-h-[80vh] sm:min-h-[90vh] flex items-center py-8 sm:py-12 md:py-16 bg-white relative">
       <div className="container mx-auto">
         <div className="grid grid-cols-12 gap-4 items-center">
           <div className="col-span-7 space-y-3 sm:space-y-4 md:space-y-6">
-            <p className="text-highlight mb-1 sm:mb-2 fade-in font-luxury italic text-xs sm:text-sm">Hi, my name is</p>
+            <p className="text-highlight mb-1 sm:mb-2 fade-in font-luxury italic text-xs sm:text-sm">
+          </p>
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 text-foreground font-luxury animate-fadeIn">
               Charan Tejayadav
             </h1>
@@ -59,8 +55,6 @@ const Hero = () => {
           <ChevronDown size={isMobileView ? 16 : 20} className="group-hover:translate-y-1 transition-transform duration-300" />
         </a>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
