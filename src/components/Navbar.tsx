@@ -47,8 +47,8 @@ const Navbar = () => {
           <span className="text-highlight">{'>'}</span>
         </a>
 
-        {/* Desktop menu */}
-        <nav className="hidden md:flex items-center space-x-6">
+        {/* Desktop menu - moved to the right side with justify-end */}
+        <nav className="hidden md:flex items-center justify-end space-x-6 ml-auto">
           {navItems.map((item) => (
             <a
               key={item.name}
