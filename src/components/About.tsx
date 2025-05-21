@@ -5,6 +5,13 @@ import { ArrowDownCircle } from 'lucide-react';
 const About = () => {
   return (
     <section id="about" className="py-12 sm:py-16 md:py-24 bg-white relative">
+      {/* Decorative elements */}
+      <div className="absolute top-10 right-10 w-20 h-20 bg-highlight/5 rounded-full animate-pulse hidden md:block"></div>
+      <div className="absolute bottom-10 left-10 w-32 h-32 bg-highlight/5 rounded-full animate-pulse hidden md:block"></div>
+      <div className="absolute top-1/3 left-1/4 w-4 h-4 bg-highlight/20 rounded-full animate-ping hidden md:block"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-3 h-3 bg-highlight/20 rounded-full animate-ping hidden md:block" 
+           style={{animationDelay: "0.7s"}}></div>
+      
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row gap-8 sm:gap-12 lg:gap-16 items-center">
           <div className="w-full lg:w-1/2 animate-fadeIn">
@@ -27,7 +34,11 @@ const About = () => {
             </div>
           </div>
           
-          <div className="w-full lg:w-1/2">
+          <div className="w-full lg:w-1/2 relative">
+            {/* Decorative element behind cards */}
+            <div className="absolute -top-5 -left-5 w-20 h-20 bg-highlight/5 rounded-full hidden lg:block"></div>
+            <div className="absolute -bottom-5 -right-5 w-20 h-20 bg-highlight/5 rounded-full hidden lg:block"></div>
+            
             <div className="grid grid-cols-2 gap-3 sm:gap-4">
               <div className="p-3 sm:p-4 md:p-6 bg-white shadow-card hover:shadow-hover rounded-lg border border-highlight/10 hover:border-highlight/30 transition-all duration-300 hover:-translate-y-1">
                 <h3 className="font-luxury text-sm sm:text-base md:text-lg mb-1 sm:mb-2 text-foreground">Frontend Development</h3>

@@ -17,13 +17,14 @@ const FallingLeaves = () => {
   
   useEffect(() => {
     // Create leaves with smoother, more natural animation settings
-    const newLeaves = Array.from({ length: 10 }, (_, index) => ({
+    // Increasing the number of leaves from 10 to 15 for more visual appeal
+    const newLeaves = Array.from({ length: 15 }, (_, index) => ({
       id: index,
       left: Math.random() * 100, // Random position from 0-100% of screen width
       animationDuration: 18 + Math.random() * 12, // Between 18-30 seconds to fall (even slower)
       delay: Math.random() * 20, // Random delay up to 20 seconds
       rotation: Math.random() * 360, // Random initial rotation
-      size: 0.4 + Math.random() * 0.3, // Smaller size between 0.4x and 0.7x
+      size: 0.3 + Math.random() * 0.4, // Size between 0.3x and 0.7x (some smaller leaves)
       rotationSpeed: 15 + Math.random() * 10, // Between 15-25 seconds for a full rotation (slower)
       horizontalMovement: Math.random() > 0.5 ? 1 + Math.random() * 2 : -(1 + Math.random() * 2), // Random horizontal drift
     }));
@@ -55,7 +56,7 @@ const FallingLeaves = () => {
             left: `${leaf.left}%`,
             animation: `customLeafFall ${leaf.animationDuration}s ease-in-out ${leaf.delay}s infinite`,
             transform: `rotate(${leaf.rotation}deg) scale(${leaf.size})`,
-            opacity: 0.4, // Reduced opacity for more transparency
+            opacity: 0.3, // Even more transparency for subtler effect
           }}
         >
           <img 

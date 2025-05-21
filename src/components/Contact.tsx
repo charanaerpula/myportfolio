@@ -14,7 +14,24 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-muted/5 border-t border-border/30">
+    <section id="contact" className="py-24 bg-muted/5 border-t border-border/30 relative">
+      {/* Decorative elements */}
+      <div className="absolute top-12 right-12 w-32 h-32 bg-highlight/5 rounded-full animate-pulse hidden md:block"></div>
+      <div className="absolute bottom-20 left-12 w-24 h-24 bg-highlight/5 rounded-full animate-pulse hidden md:block"></div>
+      <div className="absolute top-1/4 left-1/3 w-4 h-4 bg-highlight/10 rounded-full animate-ping hidden md:block" 
+           style={{animationDelay: "1.2s"}}></div>
+      <div className="absolute bottom-1/3 right-1/4 w-3 h-3 bg-highlight/20 rounded-full animate-ping hidden md:block" 
+           style={{animationDelay: "0.5s"}}></div>
+      
+      {/* Floating leaf for additional decoration */}
+      <div className="absolute top-1/3 right-12 w-12 h-12 hidden md:block opacity-30 animate-float" style={{animationDuration: "7s"}}>
+        <img 
+          src="/lovable-uploads/eaf6ccc7-491f-443b-9300-c6c2eb2dc7d7.png"
+          alt="Decorative leaf"
+          className="w-full h-full object-contain drop-shadow-lg"
+        />
+      </div>
+      
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fadeIn">
           <h2 className="text-3xl md:text-4xl font-bold font-luxury mb-4 text-foreground">Get In Touch</h2>
@@ -27,10 +44,13 @@ const Contact = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mt-8">
           <div className="lg:col-span-5 space-y-8">
-            <div className="bg-white p-8 border border-border/30 rounded-lg shadow-card hover:shadow-hover transition-all duration-300">
-              <h3 className="text-xl text-foreground font-luxury mb-6">Contact Information</h3>
+            <div className="bg-white p-8 border border-border/30 rounded-lg shadow-card hover:shadow-hover transition-all duration-300 relative overflow-hidden">
+              {/* Decorative corner accent */}
+              <div className="absolute -top-10 -right-10 w-20 h-20 bg-highlight/10 rounded-full"></div>
               
-              <div className="space-y-6">
+              <h3 className="text-xl text-foreground font-luxury mb-6 relative z-10">Contact Information</h3>
+              
+              <div className="space-y-6 relative z-10">
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-full bg-highlight/10 text-highlight shadow-sm">
                     <Mail size={20} />
@@ -83,7 +103,10 @@ const Contact = () => {
           </div>
           
           <div className="lg:col-span-7">
-            <form onSubmit={handleSubmit} className="bg-white p-8 border border-border/30 rounded-lg shadow-card hover:shadow-hover transition-all duration-300 space-y-6">
+            <form onSubmit={handleSubmit} className="bg-white p-8 border border-border/30 rounded-lg shadow-card hover:shadow-hover transition-all duration-300 space-y-6 relative overflow-hidden">
+              {/* Decorative corner accent */}
+              <div className="absolute -bottom-10 -left-10 w-20 h-20 bg-highlight/10 rounded-full"></div>
+              
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm text-foreground font-luxury">Name</label>

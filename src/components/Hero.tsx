@@ -10,7 +10,12 @@ const Hero = () => {
     width
   } = useViewportSize();
   const isMobileView = width < 768;
-  return <section id="home" className="min-h-[80vh] sm:min-h-[90vh] flex items-center py-8 sm:py-12 md:py-16 bg-white relative">
+  return <section id="home" className="min-h-[80vh] sm:min-h-[90vh] flex items-center py-8 sm:py-12 md:py-16 bg-white relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-12 left-12 w-16 h-16 bg-highlight/5 rounded-full animate-pulse hidden md:block"></div>
+      <div className="absolute top-1/4 right-12 w-24 h-24 bg-highlight/5 rounded-full animate-pulse hidden md:block"></div>
+      <div className="absolute bottom-12 left-1/3 w-12 h-12 bg-highlight/5 rounded-full animate-pulse hidden md:block"></div>
+      
       <div className="container mx-auto">
         <div className="grid grid-cols-12 gap-4 items-center">
           <div className="col-span-7 space-y-3 sm:space-y-4 md:space-y-6">
@@ -53,6 +58,14 @@ const Hero = () => {
               </Avatar>
               <div className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 w-12 h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 bg-highlight/10 rounded-full z-[-1] animate-pulse"></div>
               <div className="absolute -bottom-1 -left-1 sm:-bottom-3 sm:-left-3 w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-highlight/10 rounded-full z-[-1] animate-pulse"></div>
+              
+              {/* Additional decorative elements around avatar */}
+              <div className="absolute top-1/2 right-[-20px] w-3 h-3 bg-highlight rounded-full animate-ping"></div>
+              <div className="absolute bottom-1/3 left-[-15px] w-4 h-4 bg-highlight/30 rounded-full animate-ping" style={{animationDelay: "0.5s"}}></div>
+              <div className="absolute top-1/4 left-[-10px] w-2 h-2 bg-highlight/60 rounded-full animate-ping" style={{animationDelay: "1s"}}></div>
+              
+              {/* Decorative ring */}
+              <div className="absolute inset-0 border-2 border-dashed border-highlight/10 rounded-full -m-4 sm:-m-6 md:-m-8 animate-spin-slow"></div>
             </div>
           </div>
         </div>
