@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, ChevronDown } from 'lucide-react';
@@ -51,8 +50,23 @@ const Hero = () => {
                 />
                 <AvatarFallback className="font-luxury text-highlight text-xl sm:text-2xl md:text-3xl transform hover:scale-110 transition-all duration-300">CT</AvatarFallback>
               </Avatar>
+              {/* Top right decorative circles */}
               <div className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 w-12 h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 bg-highlight/10 rounded-full z-[-1] animate-pulse"></div>
+              {/* Bottom left decorative circles */}
               <div className="absolute -bottom-1 -left-1 sm:-bottom-3 sm:-left-3 w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-highlight/10 rounded-full z-[-1] animate-pulse"></div>
+              
+              {/* Adding more decorative elements */}
+              <div className="absolute -top-4 -left-4 sm:-top-6 sm:-left-6 w-14 h-14 sm:w-20 sm:h-20 md:w-28 md:h-28 bg-highlight/5 rounded-full z-[-2] animate-pulse" style={{animationDelay: '0.5s'}}></div>
+              <div className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 w-14 h-14 sm:w-20 sm:h-20 md:w-28 md:h-28 bg-highlight/5 rounded-full z-[-2] animate-pulse" style={{animationDelay: '1.5s'}}></div>
+              
+              {/* Small decorative dots */}
+              <div className="absolute top-1/4 -right-8 w-3 h-3 sm:w-4 sm:h-4 bg-highlight/20 rounded-full z-[-1] animate-ping" style={{animationDuration: '3s'}}></div>
+              <div className="absolute bottom-1/4 -left-8 w-3 h-3 sm:w-4 sm:h-4 bg-highlight/20 rounded-full z-[-1] animate-ping" style={{animationDuration: '4s'}}></div>
+              <div className="absolute top-1/2 -right-6 w-2 h-2 sm:w-3 sm:h-3 bg-highlight/30 rounded-full z-[-1] animate-ping" style={{animationDuration: '2.5s', animationDelay: '1s'}}></div>
+              
+              {/* Decorative rings */}
+              <div className="absolute inset-0 -m-3 sm:-m-6 md:-m-8 border-2 border-dashed border-highlight/10 rounded-full z-[-3]"></div>
+              <div className="absolute inset-0 -m-6 sm:-m-9 md:-m-12 border-1 border-dashed border-highlight/5 rounded-full z-[-3] animate-spin-slow"></div>
             </div>
           </div>
         </div>
