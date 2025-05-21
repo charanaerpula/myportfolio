@@ -1,10 +1,8 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, MessageSquare, Send, MapPin, Phone } from 'lucide-react';
-
 const Contact = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -12,24 +10,22 @@ const Contact = () => {
     console.log('Form submitted');
     alert('Thanks for reaching out! This form is not connected to a backend in this demo.');
   };
-
-  return (
-    <section id="contact" className="py-24 bg-muted/5 border-t border-border/30 relative">
+  return <section id="contact" className="py-24 bg-muted/5 border-t border-border/30 relative">
       {/* Decorative elements */}
       <div className="absolute top-12 right-12 w-32 h-32 bg-highlight/5 rounded-full animate-pulse hidden md:block"></div>
       <div className="absolute bottom-20 left-12 w-24 h-24 bg-highlight/5 rounded-full animate-pulse hidden md:block"></div>
-      <div className="absolute top-1/4 left-1/3 w-4 h-4 bg-highlight/10 rounded-full animate-ping hidden md:block" 
-           style={{animationDelay: "1.2s"}}></div>
-      <div className="absolute bottom-1/3 right-1/4 w-3 h-3 bg-highlight/20 rounded-full animate-ping hidden md:block" 
-           style={{animationDelay: "0.5s"}}></div>
+      <div className="absolute top-1/4 left-1/3 w-4 h-4 bg-highlight/10 rounded-full animate-ping hidden md:block" style={{
+      animationDelay: "1.2s"
+    }}></div>
+      <div className="absolute bottom-1/3 right-1/4 w-3 h-3 bg-highlight/20 rounded-full animate-ping hidden md:block" style={{
+      animationDelay: "0.5s"
+    }}></div>
       
       {/* Floating leaf for additional decoration */}
-      <div className="absolute top-1/3 right-12 w-12 h-12 hidden md:block opacity-30 animate-float" style={{animationDuration: "7s"}}>
-        <img 
-          src="/lovable-uploads/eaf6ccc7-491f-443b-9300-c6c2eb2dc7d7.png"
-          alt="Decorative leaf"
-          className="w-full h-full object-contain drop-shadow-lg"
-        />
+      <div className="absolute top-1/3 right-12 w-12 h-12 hidden md:block opacity-30 animate-float" style={{
+      animationDuration: "7s"
+    }}>
+        <img src="/lovable-uploads/eaf6ccc7-491f-443b-9300-c6c2eb2dc7d7.png" alt="Decorative leaf" className="w-full h-full object-contain drop-shadow-lg" />
       </div>
       
       <div className="container mx-auto px-4">
@@ -57,9 +53,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-medium text-foreground">Email</h4>
-                    <a href="mailto:contact@charantejayadav.com" className="text-foreground/80 hover:text-highlight transition-colors">
-                      contact@charantejayadav.com
-                    </a>
+                    <a href="mailto:contact@charantejayadav.com" className="text-foreground/80 hover:text-highlight transition-colors">charantejayadav91@gmail.com</a>
                   </div>
                 </div>
                 
@@ -69,9 +63,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-medium text-foreground">Phone</h4>
-                    <a href="tel:+1234567890" className="text-foreground/80 hover:text-highlight transition-colors">
-                      +1 (234) 567-890
-                    </a>
+                    <a href="tel:+1234567890" className="text-foreground/80 hover:text-highlight transition-colors">+91 9963722871</a>
                   </div>
                 </div>
                 
@@ -81,9 +73,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-medium text-foreground">Location</h4>
-                    <p className="text-foreground/80">
-                      San Francisco, CA
-                    </p>
+                    <p className="text-foreground/80">HYDERADAB, India</p>
                   </div>
                 </div>
                 
@@ -110,44 +100,22 @@ const Contact = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm text-foreground font-luxury">Name</label>
-                  <Input 
-                    id="name" 
-                    placeholder="Your name" 
-                    required
-                    className="bg-white border-border/50 focus-visible:ring-highlight"
-                  />
+                  <Input id="name" placeholder="Your name" required className="bg-white border-border/50 focus-visible:ring-highlight" />
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="email" className="text-sm text-foreground font-luxury">Email</label>
-                  <Input 
-                    id="email" 
-                    type="email" 
-                    placeholder="Your email" 
-                    required
-                    className="bg-white border-border/50 focus-visible:ring-highlight"
-                  />
+                  <Input id="email" type="email" placeholder="Your email" required className="bg-white border-border/50 focus-visible:ring-highlight" />
                 </div>
               </div>
               
               <div className="space-y-2">
                 <label htmlFor="subject" className="text-sm text-foreground font-luxury">Subject</label>
-                <Input 
-                  id="subject" 
-                  placeholder="Subject" 
-                  required
-                  className="bg-white border-border/50 focus-visible:ring-highlight"
-                />
+                <Input id="subject" placeholder="Subject" required className="bg-white border-border/50 focus-visible:ring-highlight" />
               </div>
               
               <div className="space-y-2">
                 <label htmlFor="message" className="text-sm text-foreground font-luxury">Message</label>
-                <Textarea 
-                  id="message" 
-                  placeholder="Your message" 
-                  required
-                  rows={5}
-                  className="bg-white border-border/50 focus-visible:ring-highlight resize-none"
-                />
+                <Textarea id="message" placeholder="Your message" required rows={5} className="bg-white border-border/50 focus-visible:ring-highlight resize-none" />
               </div>
               
               <Button type="submit" className="bg-highlight text-white hover:bg-highlight/90 font-luxury w-full sm:w-auto shadow-button hover:shadow-hover transition-all">
@@ -157,8 +125,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Contact;
