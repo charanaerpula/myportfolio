@@ -1,7 +1,10 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import { useViewportSize } from '@/hooks/use-mobile';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+
 const Hero = () => {
   const {
     width
@@ -40,9 +43,14 @@ const Hero = () => {
           
           <div className="col-span-5">
             <div className="relative animate-float">
-              <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 lg:w-72 lg:h-72 mx-auto rounded-full border-2 sm:border-4 border-highlight/20 overflow-hidden bg-highlight/5 flex items-center justify-center shadow-soft hover:shadow-hover transition-all transform hover:scale-105 duration-300 cursor-pointer">
-                <span className="font-luxury text-highlight text-xl sm:text-2xl md:text-3xl transform hover:scale-110 transition-all duration-300">CT</span>
-              </div>
+              <Avatar className="w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 lg:w-72 lg:h-72 mx-auto border-2 sm:border-4 border-highlight/20 overflow-hidden bg-highlight/5 flex items-center justify-center shadow-soft hover:shadow-hover transition-all transform hover:scale-105 duration-300 cursor-pointer">
+                <AvatarImage 
+                  src="/lovable-uploads/7d9b026a-a53d-4396-984a-beddf31a57ee.png" 
+                  alt="Charan Tejayadav" 
+                  className="object-cover w-full h-full"
+                />
+                <AvatarFallback className="font-luxury text-highlight text-xl sm:text-2xl md:text-3xl transform hover:scale-110 transition-all duration-300">CT</AvatarFallback>
+              </Avatar>
               <div className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 w-12 h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 bg-highlight/10 rounded-full z-[-1] animate-pulse"></div>
               <div className="absolute -bottom-1 -left-1 sm:-bottom-3 sm:-left-3 w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-highlight/10 rounded-full z-[-1] animate-pulse"></div>
             </div>
