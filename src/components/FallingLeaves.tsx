@@ -46,7 +46,7 @@ const FallingLeaves = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 w-full h-full pointer-events-none overflow-hidden" style={{ zIndex: 20 }}>
+    <div className="fixed inset-0 w-full h-full pointer-events-none overflow-hidden" style={{ zIndex: 5 }}>
       {leaves.map((leaf) => (
         <div
           key={leaf.id}
@@ -55,7 +55,7 @@ const FallingLeaves = () => {
             left: `${leaf.left}%`,
             animation: `customLeafFall ${leaf.animationDuration}s ease-in-out ${leaf.delay}s infinite`,
             transform: `rotate(${leaf.rotation}deg) scale(${leaf.size})`,
-            opacity: 0.4, // Reduced opacity from 0.7 to 0.4 for more transparency
+            opacity: 0.4, // Reduced opacity for more transparency
           }}
         >
           <img 
