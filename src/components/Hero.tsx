@@ -1,10 +1,8 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import { useViewportSize } from '@/hooks/use-mobile';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
-
 const Hero = () => {
   const {
     width
@@ -49,11 +47,7 @@ const Hero = () => {
           <div className="col-span-5">
             <div className="relative animate-float">
               <Avatar className="w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 lg:w-72 lg:h-72 mx-auto border-2 sm:border-4 border-highlight/20 overflow-hidden bg-highlight/5 flex items-center justify-center shadow-soft hover:shadow-hover transition-all transform hover:scale-105 duration-300 cursor-pointer">
-                <AvatarImage 
-                  src="/lovable-uploads/7d9b026a-a53d-4396-984a-beddf31a57ee.png" 
-                  alt="Charan Tejayadav" 
-                  className="object-cover w-full h-full"
-                />
+                <AvatarImage src="/lovable-uploads/7d9b026a-a53d-4396-984a-beddf31a57ee.png" alt="Charan Tejayadav" className="object-cover w-full h-full" />
                 <AvatarFallback className="font-luxury text-highlight text-xl sm:text-2xl md:text-3xl transform hover:scale-110 transition-all duration-300">CT</AvatarFallback>
               </Avatar>
               <div className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 w-12 h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 bg-highlight/10 rounded-full z-[-1] animate-pulse"></div>
@@ -61,11 +55,15 @@ const Hero = () => {
               
               {/* Additional decorative elements around avatar */}
               <div className="absolute top-1/2 right-[-20px] w-3 h-3 bg-highlight rounded-full animate-ping"></div>
-              <div className="absolute bottom-1/3 left-[-15px] w-4 h-4 bg-highlight/30 rounded-full animate-ping" style={{animationDelay: "0.5s"}}></div>
-              <div className="absolute top-1/4 left-[-10px] w-2 h-2 bg-highlight/60 rounded-full animate-ping" style={{animationDelay: "1s"}}></div>
+              <div className="absolute bottom-1/3 left-[-15px] w-4 h-4 bg-highlight/30 rounded-full animate-ping" style={{
+              animationDelay: "0.5s"
+            }}></div>
+              <div className="absolute top-1/4 left-[-10px] w-2 h-2 bg-highlight/60 rounded-full animate-ping" style={{
+              animationDelay: "1s"
+            }}></div>
               
               {/* Decorative ring */}
-              <div className="absolute inset-0 border-2 border-dashed border-highlight/10 rounded-full -m-4 sm:-m-6 md:-m-8 animate-spin-slow"></div>
+              
             </div>
           </div>
         </div>
