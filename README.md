@@ -1,5 +1,7 @@
 hey this is charan and this is the repository of my portfolio website
 
+preview https://charanteja.netlify.app
+
 **Use your preferred IDE**
 
 If you want to work locally using your own IDE, you can clone this repo and push changes
